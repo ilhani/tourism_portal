@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Roboto:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@700&family=Lobster+Two:ital,wght@1,700&family=Raleway:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Teko:wght@500&family=Tilt+Neon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+/** Dosis - Pacifico- Roboto- Dancing Script - Raleway- Lobster Two- Bebas Neue**/
+
+$primary-font: 'Lobster Two', sans-serif;
+$secondary-font: 'Bebas Neue', sans-serif;
+$thirst-font: 'Raleway', sans-serif;
+$font-family1: 'DM Serif Display', serif;
+$font-family2: 'Teko', sans-serif;
+$font-family3: 'Tilt Neon', sans-serif;
+$font-family4: 'Concert One', sans-serif;
+
+ $primary-color:rgb(42, 42, 72);
+$secondary-color: #6a9acc;//#5c89a5 ;
+$date-color: #ff6b6b;
+$comment-color: #ffd700;
+$gray-color: #a29d9d;
+$light-color: #e6dcd9;
+
+// /** UTILITIES **/  #1f363d
+
+.bg{
+    &-bej{background-color: $secondary-color;}
+    &-light{background-color: $light-color;}
+}
+
+.ml{
+    &-2{
+        margin-left: 1rem;
+    }
+}
+
+/** MIXINS **/
+
+@mixin flex-display($display,$align-items,$justify-content){
+    display:$display;
+    align-items : $align-items;
+    justify-content:$justify-content;
+}
+
+@mixin media($scrensize){
+
+    @if ($scrensize== xlarge){
+        @media(max-width: 1200px){@content};
+    }
+    @if ($scrensize==large){
+        @media(max-width: 992px){@content};
+    }
+    
+    @if ($scrensize== slarge){
+        @media(max-width: 850px){@content};
+    }
+    @if ($scrensize==medium){
+        @media(max-width: 768px){@content};
+    }
+    @if ($scrensize==small){
+        @media(max-width: 576px){@content};
+    }
+    @if ($scrensize== xsmall){
+        @media(max-width: 380px){@content};
+    }
+
+}

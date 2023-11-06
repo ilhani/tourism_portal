@@ -1,0 +1,293 @@
+.btn{
+    background-color: $light-color;
+    padding: 1.3rem 2rem;
+    color: $primary-color;
+    
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 1px;
+    outline: none;
+    letter-spacing: 1px;
+    transition: all .5s;
+
+    @include media(medium){
+        padding: 1rem 1.5rem !important;
+    }
+    
+    &-primary{      
+            border-radius:10px 0px 0px 0px;  
+            padding:1.3rem 2.9rem 
+    }
+    &.ml-2{
+        border-radius: 0px 0px 10px 0px;
+    }
+    
+    &:hover{
+        background-color: $primary-color;
+        color: $light-color;
+    }
+
+    &-primary{
+        background-color: $primary-color;
+        color: $light-color;
+
+        &:hover{
+            background-color: $light-color;
+            color: $primary-color;
+        }
+    }
+}
+
+/** RATING **/
+
+.rating{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    border-radius: 20px;
+    width: 3rem;
+    height: 3rem;
+    background-color: rgb(115, 179, 193);
+    opacity: 0;
+    z-index: 5;
+    line-height: 3rem;
+    text-align: center;
+    font-size: 1.4rem;
+    font-family: $primary-font;
+    transition: all .5s;
+    color: $primary-color;
+}
+
+/** REVIEW **/
+
+.review{
+    padding: 5rem;
+    font-size: 1.3rem;
+    line-height: 1.2rem;
+    margin-left: 10rem;
+    
+    border-left: 2px solid rgb(143, 177, 185);
+    transform: skew(-29deg);
+
+    @include media(large){
+     transform: none;
+     border: none;
+     margin: 0;
+    }
+
+    @include media(medium){
+        transform: none;
+        
+    }
+
+    @include media(small){
+        transform: none;
+    }
+    
+    font-family: $font-family3;
+    color: #ffffff;
+    
+    &>*{
+        transform: skew(29deg);
+
+        @include media(large){
+            transform: none;
+            
+           }
+       
+           @include media(medium){
+            transform: none;
+           }
+       
+           @include media(small){
+            transform: none;
+           }
+           
+    }
+    &-title{
+        font-size: 3rem;
+        padding: 3rem;
+        margin-right: 1rem;
+    color: $secondary-color;
+    }
+    &-tags{
+       font-size: 1.5rem;
+       text-transform: uppercase !important;
+       color: #ffffff;
+    }
+
+    &-text{
+      margin: 1.2rem;
+     line-height: 2rem;
+      span{
+        font-weight: bold;
+      }
+    }
+
+    &-user{
+        display: flex;
+        align-items: center;
+
+        @include media(small){
+            flex-direction: column;
+            
+          }
+
+          @include media(small){
+            flex-basis: 100%;
+           
+          }
+
+        img{
+           width: 10rem;
+           border-radius: 50%;
+           
+        }
+
+        &-detail{
+            display: flex;
+            margin-right: 2rem;
+            margin-left: 1rem;
+            .name{
+                color: $comment-color ;
+            }
+            .date{
+                color: $date-color;
+                margin-left: 2rem;
+            }
+        }
+        &-platform{
+            display: flex;
+            margin-right: 2rem;
+            
+            :not(:last-child){
+                color: $secondary-color;
+            }
+            .fab{
+                margin: 0 1rem;
+            }
+        }
+        &-rating{
+            margin-left: 0;
+            display: flex;
+            .checked{
+                color: $secondary-color;
+            }
+        }
+    }
+}
+
+
+// CARD-----------------------------
+
+.card{
+    height: 48rem;
+    @include media(large){
+        height: 43rem;
+    }
+
+    @include media(medium){
+        height: 34rem;
+    }
+
+    @include media(small){
+        height: 25rem;
+    }
+    @include media(xsmall){
+        height: 17rem;
+    }
+    
+    &-inner{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        perspective: 2000px;
+      
+    }
+    .card-front , .card-back{
+     
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        backface-visibility: hidden;
+        transition: all 1s;
+        
+    }
+
+    .card-front{
+        background-color: $primary-color;
+        text-align: center;
+       
+        h4{
+            font-size: 2rem;
+            letter-spacing: .1rem;
+            text-align: center;
+            color: #d9e5ea;
+            margin-top: .5rem;
+            line-height: 100%;
+            justify-content: center;
+            @include media(xsmall){
+                font-size: 1.5rem;
+            }
+        }
+    
+    }
+    .card-back{
+        background-color: $secondary-color;
+        transform: rotateY(180deg);
+        display: table;
+        
+      
+        &-content{
+            display: table-cell;
+            vertical-align: middle;
+            font-family: $font-family3;
+            p{
+                font-size: 3rem;
+                color: #b0e3e9;
+                margin-bottom: 1rem;
+                @include media(small){
+                    font-size: 2rem;
+                }
+                @include media(xsmall){
+                    font-size: 1.5rem;
+                }
+            }
+
+            a{
+                transition: all 0.5s; 
+                margin-inline-start: 1rem;
+                @include media(small){
+                    display: flex;
+                    flex-direction: column;
+                    margin: 1rem 0;
+                    font-size: 1rem;
+                }
+                @include media(xsmall){
+                    display: flex;
+                    flex-direction: column;
+                    margin: .5rem 0;
+                    font-size: 0.7rem;
+                }
+            &:hover{
+                color: $primary-color;
+
+            }  }
+
+        }
+    }
+
+    &:hover .card-front{
+        
+        transform: rotateY(180deg);
+
+    }
+
+    &:hover .card-back{
+        transform: none;
+    }
+
+}
